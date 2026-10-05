@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ഉള്ളി Dino - Doodle Art Knife & Sword Runner</title>
+    <meta name="description" content="Recreated Chrome Dino runner game featuring the weird short curly-haired girl, knives, swords, doodle art notebook aesthetic, custom sounds, and animated Malayalam title ഉള്ളി Dino.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-graphite">
+
+    <!-- ============================================================
+         FULL-PAGE ANIMATED MALAYALAM INTRO ("ഉള്ളി Dino")
+         ============================================================ -->
+    <div id="intro-overlay" class="intro-overlay" role="dialog" aria-label="Intro Screen">
+        <!-- Notebook Spiral on Left Edge -->
+        <div class="intro-spiral-edge">
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+            <div class="spiral-ring"></div>
+        </div>
+
+        <div class="intro-content">
+            <div class="intro-title-wrapper">
+                <!-- Weird Curly-Haired Girl Peeking Over Title -->
+                <div class="intro-girl-peek" title="Meet Ulli - The weird curly-haired girl!">
+                    <svg viewBox="0 0 100 100" width="100%" height="100%">
+                        <!-- Massive messy curls -->
+                        <g stroke="#1f1e1d" stroke-width="3" fill="#1f1e1d">
+                            <circle cx="25" cy="40" r="14" />
+                            <circle cx="45" cy="22" r="16" />
+                            <circle cx="70" cy="30" r="15" />
+                            <circle cx="85" cy="48" r="14" />
+                            <circle cx="15" cy="55" r="12" />
+                            <circle cx="32" cy="16" r="11" />
+                            <circle cx="62" cy="14" r="12" />
+                        </g>
+                        <!-- Head -->
+                        <circle cx="50" cy="52" r="28" fill="#fff9f0" stroke="#1f1e1d" stroke-width="3" />
+                        <!-- Big Quirky Eyes -->
+                        <circle cx="40" cy="48" r="10" fill="#fff" stroke="#1f1e1d" stroke-width="2.5" />
+                        <circle cx="60" cy="48" r="11" fill="#fff" stroke="#1f1e1d" stroke-width="2.5" />
+                        <circle cx="42" cy="48" r="4.5" fill="#1f1e1d" />
+                        <circle cx="62" cy="48" r="5" fill="#1f1e1d" />
+                        <!-- Eyelashes & Brows -->
+                        <path d="M 32 36 L 46 38 M 55 38 L 68 35" stroke="#1f1e1d" stroke-width="2.5" stroke-linecap="round" />
+                        <!-- Panicked smile -->
+                        <path d="M 42 64 Q 50 72 58 64" fill="none" stroke="#1f1e1d" stroke-width="2.5" stroke-linecap="round" />
+                        <!-- Cheeks -->
+                        <circle cx="34" cy="58" r="4" fill="rgba(231,76,60,0.3)" />
+                        <circle cx="66" cy="58" r="4" fill="rgba(231,76,60,0.3)" />
+                    </svg>
+                </div>
+
+                <!-- Animated Malayalam Title -->
+                <div class="animated-title">
+                    <span class="malayalam-word">
+                        ഉള്ളി
+                        <span class="malayalam-sprout">🧅</span>
+                    </span>
+                    <span class="dino-word-wrapper">
+                        <span class="dino-word">Dino</span>
+                        <span class="dino-red-cross"></span>
+                        <span class="knife-tag">⚔️ KNIVES & SWORDS!</span>
+                    </span>
+                </div>
+
+                <!-- Floating/Spinning Doodle Knives Around Title -->
+                <div class="intro-swords-orbit">
+                    <span class="orbit-knife k1">🔪</span>
+                    <span class="orbit-knife k2">🗡️</span>
+                    <span class="orbit-knife k3">⚔️</span>
+                </div>
+            </div>
+
+            <!-- Subtitle in clean doodle style -->
+            <div class="intro-subtitles">
+                <p class="malayalam-subtitle" style="font-family:'Patrick Hand',cursive; letter-spacing:1px; color:var(--pencil-gray);">THE NOTEBOOK KNIFE & SWORD RUNNER</p>
+                <p class="english-subtitle">"Dodge the Knives & Swords! The Ultimate Notebook Doodle Runner"</p>
+            </div>
+
+            <!-- Hand-drawn Start Button -->
+            <div class="intro-play-box">
+                <button id="start-game-btn" class="sketch-start-btn" id="intro-start-btn">
+                    ▶ TAP / CLICK HERE OR PRESS [ SPACE ] TO PLAY
+                </button>
+                <p class="intro-hint">⚡ Custom Jump & Sword Crash Sound Effects Activated 🔊</p>
+            </div>
+
+            <!-- Cheering Mini-Onions in Footer -->
+            <div class="intro-footer-onions">
+                <span>🧅 "RUN!"</span>
+                <span>🏃‍♀️ "WHEEEE!"</span>
+                <span>⚔️ "WATCH OUT!"</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================================
+         MAIN SKETCHBOOK NOTEBOOK INTERFACE
+         ============================================================ -->
+    <main class="notebook-wrapper">
+        <!-- Notebook Spiral Edge -->
+        <div class="notebook-spiral-strip">
+            <div class="nb-spiral-ring"></div>
+            <div class="nb-spiral-ring"></div>
+            <div class="nb-spiral-ring"></div>
+            <div class="nb-spiral-ring"></div>
+            <div class="nb-spiral-ring"></div>
+            <div class="nb-spiral-ring"></div>
+            <div class="nb-spiral-ring"></div>
+            <div class="nb-spiral-ring"></div>
+        </div>
+
+        <!-- Top Header & Margins -->
+        <header class="notebook-topbar">
+            <div class="header-left">
+                <div class="notebook-title">
+                    <span class="mini-malayalam">ഉള്ളി</span>
+                    <span class="mini-dino">Dino</span>
+                    <span class="doodle-badge">Sketchbook Ed.</span>
+                </div>
+
+                <!-- Interactive Sketched Sun Doodle -->
+                <div id="doodle-sun" class="doodle-sun" title="Click me to change sunglasses!">
+                    ☀️
+                </div>
+
+                <!-- Interactive Paper Airplane Doodle -->
+                <div id="paper-plane-doodle" class="paper-plane-doodle" title="Click me to do a loop!">
+                    ✈️ <span>- - - ➰</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Power-up status badges -->
+                <div class="active-powerups-hud">
+                    <span id="turbo-status-badge" class="powerup-badge turbo-badge" style="display:none;">🌶️ 2X Turbo</span>
+                </div>
+
+                <!-- Milestone celebration banner -->
+                <div id="milestone-banner" class="milestone-banner"></div>
+
+                <!-- Hand-drawn Score HUD -->
+                <div class="score-hud-notebook">
+                    <span class="hi-score-box">HI <span id="hi-score-display">00000</span></span>
+                    <span class="cur-score-box"><span id="cur-score-display">00000</span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Canvas Runner Area -->
+        <section class="canvas-container">
+            <canvas id="game-canvas" width="1000" height="360"></canvas>
+        </section>
+
+        <!-- Game Over Modal (Fixed Overlay) -->
+        <div id="game-over-modal" class="game-over-modal" role="dialog" aria-modal="true" aria-label="Game Over">
+            <div class="go-skull">☠️</div>
+            <h2 class="go-title">GAME OVER</h2>
+            <p id="game-over-comment" class="go-comment">Watch out for the sharp edges!</p>
+            <div class="go-stats">
+                <div>Score: <strong id="final-score-val">0</strong></div>
+                <div>Best: <strong id="best-score-val">0</strong></div>
+            </div>
+            <button id="restart-btn" class="go-btn">
+                🔄 PLAY AGAIN
+            </button>
+        </div>
+
+        <!-- Mobile Quick Jump / Duck Buttons -->
+        <div class="mobile-controls">
+            <button id="mobile-jump-btn" class="mobile-btn jump-btn" aria-label="Tap to Jump">
+                <span class="btn-icon">🦘</span>
+                <span class="btn-text">TAP TO JUMP</span>
+            </button>
+            <button id="mobile-duck-btn" class="mobile-btn duck-btn" aria-label="Duck or Slide">
+                <span class="btn-icon">🦆</span>
+                <span class="btn-text">DUCK</span>
+            </button>
+        </div>
+
+        <!-- Blank Spaces Populated with Fun Margin Doodles & Controls -->
+        <footer class="notebook-bottom-section">
+            <!-- Left Margin Card: Gameplay Tips & Doodle Sticky Note -->
+            <div class="doodle-card">
+                <div class="card-tape"></div>
+                <h4>📝 How to Play:</h4>
+                <p><span class="key-badge">SPACE</span>, <span class="key-badge">▲</span> or <span class="key-badge">🦘 JUMP BTN</span> : <strong>Jump</strong> over cleavers, swords & flaming blades!</p>
+                <p><span class="key-badge">▼ DOWN</span> : <strong>Duck / Slide</strong> under flying scimitars & shurikens!</p>
+                <div style="margin-top: 8px; border-top: 1px dashed rgba(43,42,39,0.3); padding-top: 6px;">
+                    <strong>🌶️ Power-Up:</strong>
+                    <div style="font-size: 0.9rem; line-height: 1.35; margin-top: 2px;">
+                        <div>🌶️ <strong>Chilli Booster:</strong> 2X Turbo Speed & Score Multiplier!</div>
+                    </div>
+                </div>
+                <p style="margin-top: 6px; font-size: 0.9rem; color: #7f8c8d;">
+                    🧅 <em>Meet your little companion onion running with you!</em>
+                </p>
+            </div>
+
+            <!-- Center Controls: Sound Toggles & Direct Soundboard -->
+            <div class="controls-dashboard">
+                <div class="doodle-buttons-row">
+                    <button id="mute-btn" class="sketch-action-btn" title="Toggle Custom Jump and Crash Sound Effects">
+                        🔊 <span class="lbl">Mute SFX</span>
+                    </button>
+                    <button id="bgm-btn" class="sketch-action-btn" title="Toggle Relaxing Lo-Fi Doodle Rhythm">
+                        🎵 <span class="lbl">Lo-fi Beat: OFF</span>
+                    </button>
+                    <div class="ink-picker">
+                        <span>🖊️ Ink:</span>
+                        <select id="ink-theme-select" class="ink-select" aria-label="Select Ink Theme">
+                            <option value="graphite">✏️ Graphite Pencil</option>
+                            <option value="blue">🖊️ Blue Ballpoint</option>
+                            <option value="red">🖍️ Red Teacher Pen</option>
+                            <option value="chalk">🖤 Chalkboard Dark</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Custom Soundboard for Direct Audio Verification -->
+                <div class="soundboard-group" style="flex-wrap: wrap; justify-content: center;">
+                    <span style="font-weight: bold;">Test Custom Sounds:</span>
+                    <button id="test-jump-btn" class="sound-test-btn" title="Play Jump Boing Sound">
+                        🦘 Jump Boing
+                    </button>
+                    <button id="test-crash-btn" class="sound-test-btn" title="Play Sword Clash & Bonk Sound">
+                        🗡️ Sword Crash
+                    </button>
+                    <button id="test-chilli-btn" class="sound-test-btn" title="Play Chilli Turbo Sound">
+                        🌶️ Chilli Turbo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Margin: Interactive Mascot Onion & Coffee Stain -->
+            <div class="mascot-doodle-area">
+                <div id="onion-speech-bubble" class="onion-speech-bubble">SQUEAK! 🧅</div>
+                <div id="mascot-onion" class="mascot-onion" title="Click me! I'm Ulli the Onion!">
+                    🧅
+                </div>
+                <div class="mascot-label">Ulli (Click me!)</div>
+
+                <!-- Coffee Mug Stain Doodle -->
+                <div id="coffee-stain-doodle" class="coffee-stain-doodle" title="Coffee ring stain on sketchbook! Click to sip!">
+                    ☕
+                </div>
+            </div>
+        </footer>
+
+        <!-- Pinned Polaroid Sketch Badge (Shown on large screens) -->
+        <aside class="polaroid-badge">
+            <img src="assets/poster.jpg" alt="Ulli Girl Doodle" class="polaroid-img">
+            <div class="polaroid-caption">Ulli & Knives!</div>
+        </aside>
+    </main>
+
+    <!-- SVG Filter for Authentic Hand-drawn Line Wobble -->
+    <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
+        <defs>
+            <filter id="doodle-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Game Scripts -->
+    <script src="audio.js?v=3"></script>
+    <script src="sprites.js"></script>
+    <script src="game.js?v=3"></script>
+    <script src="doodles.js?v=3"></script>
+</body>
+</html>
